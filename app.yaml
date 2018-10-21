@@ -1,0 +1,2 @@
+service: prediction-service
+runtime: python37

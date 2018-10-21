@@ -8,7 +8,7 @@ from watson_developer_cloud.natural_language_understanding_v1 import Features, E
 
 import json
 import requests
-import psycopg2
+import pg8000
 
 app = Flask(__name__)
 
@@ -27,7 +27,7 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 )
 
 cache = base.Client(('localhost', 11211))
-conn = psycopg2.connect(database="hack-isu", user="postgres", password="twitterbot1", host="35.232.221.83", port="5432")
+conn = pg8000.connect(database="hack-isu", user="postgres", password="twitterbot1", host="35.232.221.83", port=5432)
 
 @app.route('/')
 @app.route('/index.html')
